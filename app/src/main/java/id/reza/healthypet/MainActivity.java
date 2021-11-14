@@ -1,5 +1,7 @@
 package id.reza.healthypet;
 
+import static java.lang.String.*;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     //    Initilize Variable
     EditText input_nama, input_peliharaan, input_telpon;
@@ -41,7 +43,26 @@ public class MainActivity extends AppCompatActivity {
         skumur = findViewById(R.id.seekbar_umur);
         angkaumur = findViewById(R.id.umur);
         btn_daftar = findViewById(R.id.button_daftar);
+        angkaumur.setText(skumur.getProgress() + " Bulan");
+        skumur.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int valumur = 0;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                angkaumur.setText(String.valueOf(progress));
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                    angkaumur.setText(valumur + " Bulan");
+            }
+        });
+
+        //TOMBOL DAFTAR
         btn_daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,17 +75,29 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
+
             //CREATE CUSTOMISE ALERT
             private void alert(String message){
 
                 String nmpemilik = input_nama.getText().toString();
                 String nmpeliaharan = input_peliharaan.getText().toString();
                 String notelepon = input_telpon.getText().toString();
+                String umur = angkaumur.getText().toString();
+                int id_pilihan = radio_jk.getCheckedRadioButtonId();
+                RadioButton jk_pilihan = (RadioButton) findViewById(id_pilihan);
+                String jenis_pilihan = "";
+                if(cb1.isChecked()){
+                    jenis_pilihan += "Anjing";
+                }
+                if(cb2.isChecked()){
+                    jenis_pilihan += "Kucing";
+                }
+
 
 
                 AlertDialog alert = new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Data Pendaftar")
-                        .setMessage("Nama pemilik       :"+nmpemilik+'\n'+"Nama peliharaan : "+nmpeliaharan+'\n'+"No Telepon           : "+notelepon+'\n')
+                        .setMessage("Nama pemilik       :"+nmpemilik+'\n'+"Nama peliharaan : "+nmpeliaharan+'\n'+"No telepon           : "+notelepon+'\n' + "Jenis kelamin      : "+jk_pilihan.getText().toString()+'\n' + "Jenis hewan         : "+ jenis_pilihan+'\n'+"Umur peliharaan : "+umur)
                         .setPositiveButton("OKE", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {dialog.dismiss();
