@@ -6,6 +6,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -100,7 +101,15 @@ public class MainActivity extends AppCompatActivity{
                         .setMessage("Nama pemilik        : "+nmpemilik+'\n'+"Nama peliharaan  : "+nmpeliaharan+'\n'+"No telepon             : "+notelepon+'\n' + "Jenis kelamin        : "+jk_pilihan.getText().toString()+'\n' + "Jenis hewan          : "+ jenis_pilihan+'\n'+"Umur peliharaan   : "+umur)
                         .setPositiveButton("OKE", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {dialog.dismiss();
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i = new Intent(MainActivity.this, DataPendaftar.class);
+                                Intent nama = i.putExtra("nama", input_nama.getText().toString());
+                                Intent namap = i.putExtra("namap", input_peliharaan.getText().toString());
+                                Intent telepon = i.putExtra("telepon", input_telpon.getText().toString());
+                                Intent jk = i.putExtra("jk", jk_pilihan.getText().toString());
+                                Intent jh = i.putExtra("jh", input_telpon.getText().toString());
+                                Intent umur = i.putExtra("umur", angkaumur.getText().toString());
+                                startActivity(i);
 
                             }
                         }).create();
