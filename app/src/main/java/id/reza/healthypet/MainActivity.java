@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity{
         btn_daftar = findViewById(R.id.button_daftar);
         angkaumur.setText(skumur.getProgress() + " Bulan");
         skumur.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int valumur = 0;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                angkaumur.setText(String.valueOf(progress));
+                angkaumur.setText(progress + (" Bulan"));
             }
 
             @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity{
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                    angkaumur.setText(valumur + " Bulan");
+
             }
         });
 
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity{
 
 
                 AlertDialog alert = new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Data Pendaftar")
-                        .setMessage("Nama pemilik       :"+nmpemilik+'\n'+"Nama peliharaan : "+nmpeliaharan+'\n'+"No telepon           : "+notelepon+'\n' + "Jenis kelamin      : "+jk_pilihan.getText().toString()+'\n' + "Jenis hewan         : "+ jenis_pilihan+'\n'+"Umur peliharaan : "+umur)
+                        .setTitle("Selamat Pendaftaran Berhasil!"+'\n')
+                        .setMessage("Nama pemilik        : "+nmpemilik+'\n'+"Nama peliharaan  : "+nmpeliaharan+'\n'+"No telepon             : "+notelepon+'\n' + "Jenis kelamin        : "+jk_pilihan.getText().toString()+'\n' + "Jenis hewan          : "+ jenis_pilihan+'\n'+"Umur peliharaan   : "+umur)
                         .setPositiveButton("OKE", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {dialog.dismiss();
