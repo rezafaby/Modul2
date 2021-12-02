@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DataPendaftar extends AppCompatActivity {
 
@@ -12,7 +13,7 @@ public class DataPendaftar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_pendaftar);
+        setContentView(R.layout.datapendaftar);
 
         String nama = getIntent().getExtras().getString("nama");
         String namap = getIntent().getExtras().getString("namap");
@@ -33,4 +34,5 @@ public class DataPendaftar extends AppCompatActivity {
         hasiljk.setText( "" + jk);
         hasilumur.setText( "" + umur);
     }
+    
 }

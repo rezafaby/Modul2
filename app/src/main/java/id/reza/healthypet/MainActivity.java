@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
-    //    Initilize Variable
+    //Initilize Variable
     EditText input_nama, input_peliharaan, input_telpon;
     RadioGroup radio_jk;
     RadioButton rbmale, rbfemale;
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity{
         radio_jk = findViewById(R.id.radio_jenkel);
         rbmale = findViewById(R.id.male);
         rbfemale = findViewById(R.id.female);
-        cb1 = findViewById(R.id.check_anjing);
-        cb2 = findViewById(R.id.check_kucing);
+        cb1 = findViewById(R.id.check_grooming);
+        cb2 = findViewById(R.id.check_potong);
         skumur = findViewById(R.id.seekbar_umur);
         angkaumur = findViewById(R.id.umur);
         btn_daftar = findViewById(R.id.button_daftar);
@@ -75,11 +75,8 @@ public class MainActivity extends AppCompatActivity{
                 }
             }
 
-
-
             //CREATE CUSTOMISE ALERT
             private void alert(String message){
-
                 String nmpemilik = input_nama.getText().toString();
                 String nmpeliaharan = input_peliharaan.getText().toString();
                 String notelepon = input_telpon.getText().toString();
@@ -88,17 +85,20 @@ public class MainActivity extends AppCompatActivity{
                 RadioButton jk_pilihan = (RadioButton) findViewById(id_pilihan);
                 String jenis_pilihan = "";
                 if(cb1.isChecked()){
-                    jenis_pilihan += "Anjing";
+                    jenis_pilihan += "Grooming";
                 }
                 if(cb2.isChecked()){
-                    jenis_pilihan += "Kucing";
+                    jenis_pilihan += "Potong rambut";
                 }
-
-
 
                 AlertDialog alert = new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Selamat Pendaftaran Berhasil!"+'\n')
-                        .setMessage("Nama pemilik        : "+nmpemilik+'\n'+"Nama peliharaan  : "+nmpeliaharan+'\n'+"No telepon             : "+notelepon+'\n' + "Jenis kelamin        : "+jk_pilihan.getText().toString()+'\n' + "Jenis hewan          : "+ jenis_pilihan+'\n'+"Umur peliharaan   : "+umur)
+                        .setMessage("Nama pemilik        : "
+                                +nmpemilik+'\n'+"Nama peliharaan  : "
+                                +nmpeliaharan+'\n'+"No telepon             : "
+                                +notelepon+'\n' + "Jenis kelamin        : "
+                                +jk_pilihan.getText().toString()+'\n' + "Jenis hewan          : "
+                                + jenis_pilihan+'\n'+"Umur peliharaan   : "+umur)
                         .setPositiveButton("OKE", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

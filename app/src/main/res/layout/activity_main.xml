@@ -117,7 +117,9 @@
                 android:hint="Nyoman Charles"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:background="@drawable/edt_login"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -135,8 +137,10 @@
                 android:hint="John Doe"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="16sp"/>
-<!--                android:inputType="textVisiblePassword|textNoSuggestions"-->
+                android:textSize="16sp"
+                android:background="@drawable/edt_login"
+                />
+            <!--                android:inputType="textVisiblePassword|textNoSuggestions"-->
 
 
             <TextView
@@ -156,7 +160,9 @@
                 android:inputType="number"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:background="@drawable/edt_login"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -177,19 +183,21 @@
                     android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jantan"/>
+                    android:text="Jantan"
+                    android:buttonTint="@color/green"/>
                 <RadioButton
                     android:id="@+id/male"
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Betina"/>
+                    android:text="Betina"
+                    android:buttonTint="@color/green"/>
             </RadioGroup>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jenis hewan"
+                android:text="Jenis perawatan"
                 android:textSize="14sp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"/>
@@ -199,17 +207,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <CheckBox
-                    android:id="@+id/check_anjing"
+                    android:id="@+id/check_grooming"
                     android:layout_marginRight="16dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Anjing" />
+                    android:text="Grooming"
+                    android:buttonTint="@color/green"/>
                 <CheckBox
-                    android:id="@+id/check_kucing"
+                    android:id="@+id/check_potong"
                     android:layout_marginRight="16dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kucing" />
+                    android:text="Potong rambut"
+                    android:buttonTint="@color/green"/>
 
             </LinearLayout>
 
@@ -229,7 +239,8 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
                 android:max="100"
-                android:progress="0" />
+                android:progress="0"
+                />
 
             <TextView
                 android:id="@+id/umur"
