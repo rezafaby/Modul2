@@ -9,4 +9,15 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="judul_tampildata">Berikut data yang anda daftarkan</string>
+    <string name="judul_daftarberhasil">Selamat pendaftaran anda berhasil</string>
+    <string name="nama_pemilik">Nama pemilik</string>
+    <string name="nama_peliharaan">Nama peliharaan</string>
+    <string name="tanda">:</string>
+    <string name="telepon">Telepon</string>
+    <string name="jenis_kelamin">Jenis kelamin</string>
+    <string name="jenis_perawatan">Jenis perawatan</string>
+    <string name="umur_peliharaan">Umur peliharaan</string>
+    <string name="kembali">KEMBALI</string>
+    <string name="todo">TODO</string>
 </resources>
